@@ -4,15 +4,15 @@ namespace assignment {
 
   std::optional<int> BinarySearchIterative::Search(const std::vector<int>& arr, int search_elem) const {
     int left = 0;
-    int right = arr.size()-1;
+    int right = static_cast<int>(arr.size())-1;
     while (left <= right) {
-      int middle = left + (right-left)/2;
+      int middle = (left + right)/2;
       if (arr[middle] == search_elem) {
         return middle;
       } else if (search_elem > arr[middle]) {
-        left = middle;
+        left = middle + 1;
       } else {
-        right = middle;
+        right = middle - 1;
       }
     }
     // Tips:

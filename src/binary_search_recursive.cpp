@@ -21,9 +21,9 @@ namespace assignment {
     if (search_elem == arr[middle]) {
       return middle;
     } else if (search_elem > arr[middle]) {
-      return search(arr, search_elem, middle, stop);
+      return search(arr, search_elem, middle+1, stop);
     } else {
-      return search(arr, search_elem, start, middle);
+      return search(arr, search_elem, start, middle-1);
     }
     // Tips:
     // 1. Рассмотрите базовые случаи выхода и рекурсии:
